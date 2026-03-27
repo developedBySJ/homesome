@@ -12,6 +12,7 @@ import {
 interface SidebarProps {
   openCount: number;
   controls: KdsControl[];
+  onAction?: (action: string) => void;
 }
 
 const ICON_MAP: Record<string, React.ReactNode> = {
@@ -22,7 +23,7 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   OPEN_SETTINGS: <Settings className="h-5 w-5" />,
 };
 
-export function Sidebar({ openCount, controls }: SidebarProps) {
+export function Sidebar({ openCount, controls, onAction }: SidebarProps) {
   return (
     <aside
       className="
@@ -47,13 +48,14 @@ export function Sidebar({ openCount, controls }: SidebarProps) {
           key={control.id}
           icon={ICON_MAP[control.action]}
           label={control.label}
+          onClick={() => onAction?.(control.action)}
         />
       ))}
 
-      {/* Spacer on desktop. On mobile, navigation arrow hides */}
+      {/* Spacer on desktop */}
       <div className="hidden flex-1 lg:block" />
 
-      {/* Collapse / navigate button */}
+      {/* Collapse button */}
       <button
         type="button"
         className="hidden shrink-0 rounded-full border border-gray-600 p-2 text-gray-400 hover:text-white lg:block"

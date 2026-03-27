@@ -37,7 +37,7 @@ export function OrderCardHeader({
         <p className="truncate text-sm font-bold text-gray-900">
           {customerName}
         </p>
-        <p className="text-[10px] text-gray-800">{time}</p>
+        <p className="text-xs text-gray-800">{time}</p>
       </div>
       <div className="flex shrink-0 flex-col items-end gap-0.5">
         <button
@@ -48,7 +48,7 @@ export function OrderCardHeader({
         >
           <CircleX className="h-4 w-4" aria-hidden="true" />
         </button>
-        <span className="whitespace-nowrap font-mono text-[10px] text-gray-800">
+        <span className="whitespace-nowrap font-mono text-xs text-gray-800">
           {elapsed}
         </span>
       </div>
