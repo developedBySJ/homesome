@@ -1,15 +1,13 @@
-// Keeping simple as we only has one page
-// can be upgrades to react router for more robust setup
+// Simple routing — single page for now.
+// Can be upgraded to react-router for multi-page in stage 2.
 
-import { AppShellLayout } from '@/components/layouts/appshell';
-import HomePage from '@/components/pages/home';
+import { AppShellLayout } from '@/components/layouts/app-shell';
+import CardViewPage from '@/components/pages/card-view';
 
-export const Routes = () => {
+export function Routes() {
   return (
-    <>
-      <AppShellLayout>
-        <HomePage />
-      </AppShellLayout>
-    </>
+    <AppShellLayout>
+      <CardViewPage />
+    </AppShellLayout>
   );
-};
+}

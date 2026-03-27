@@ -1,10 +1,11 @@
-import { Routes } from './routes';
+import { Routes } from '@/routes';
+import { KdsProvider } from '@/shared/state/kds-provider';
 
 function App() {
   return (
-    <main>
+    <KdsProvider>
       <Routes />
-    </main>
+    </KdsProvider>
   );
 }
 
